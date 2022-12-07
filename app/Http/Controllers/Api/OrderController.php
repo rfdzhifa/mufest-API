@@ -78,7 +78,7 @@ class OrderController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
-            'quantity' => $request->phone,
+            'quantity' => $request->quantity,
             'total' => $request->quantity * $tickets->price,
             'bookingCode' => 'TCX' . mt_rand(10000, 99999) . mt_rand(100, 999),
         ]);
@@ -113,7 +113,7 @@ class OrderController extends Controller
         if ($user->isAdmin == 'false') {
             if ($orders->orderBy == $user->id) {
                 return response()->json([
-                    'code' => 206,
+                    'code' => 202,
                     'status' => 'success',
                     'message' => 'data successfully showed',
                     'data' => $orders
@@ -127,7 +127,7 @@ class OrderController extends Controller
             ], 403);
         }
         return response()->json([
-            'code' => 206,
+            'code' => 202,
             'status' => 'success',
             'message' => 'data successfully showed',
             'data' => $orders

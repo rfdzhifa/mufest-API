@@ -33,7 +33,7 @@ class TransactionController extends Controller
         if ($user->isAdmin == 'true') {
             $transaction = Transaction::latest()->get();
         } elseif ($user->isAdmin == 'false') {
-            $transaction = Transaction::where('transaction', $user->id)->latest()->get();
+            $transaction = Transaction::where('transactionBy', $user->id)->latest()->get();
         }
 
         return response()->json([

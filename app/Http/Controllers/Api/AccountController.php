@@ -130,7 +130,8 @@ class AccountController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => ['nullable','string','max:255'],
             'email' => ['nullable','string','max:255','unique:users,email'],
-            'password' => ['nullable','string','min:8','max:255']
+            'password' => ['nullable','string','min:8','max:255'],
+            'isAdmin' => ['nullable','string','max:255']
         ]);
 
         if ($validator->fails()) {
