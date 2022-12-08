@@ -136,7 +136,7 @@ class AccountController extends Controller
 
         if ($validator->fails()) {
             return response()->json([
-                'code' => 422,
+                'code' => 402,
                 'status' => 'error',
                 'message' => 'data not match with our validation',
                 'data' => $validator->errors()

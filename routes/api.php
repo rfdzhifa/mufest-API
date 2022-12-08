@@ -29,7 +29,6 @@ Route::middleware('auth:sanctum')->group(function() {
         Route::Resource('ticket', TicketController::class, ['only' => ['index', 'show']]);
         Route::Resource('order', OrderController::class, ['only' => ['store', 'index', 'show']]);
         Route::Resource('transaction', TransactionController::class, ['only' => ['store', 'index', 'show']]);
-        Route::Resource('account', AccountController::class, ['only' => ['index']]);
     });
 
     Route::prefix('admin')->group(function() {
